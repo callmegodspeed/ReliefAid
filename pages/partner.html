@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReliefAid | Partnership</title>
+    <link rel="stylesheet" href="/src/assets/css/partner.css"> <!-- Link to the new CSS file -->
+    <!-- Add a modern font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">ReliefAid</div>
+        <nav>
+            <ul>
+                <li><a href="/pages/index.html">Home</a></li>
+                <li><a href="/pages/interactive map.html">Interactive Map</a></li>
+                <li><a href="/pages/inventory.html">Inventory</a></li>
+                <li><a href="/pages/donation.html">Make a Donation</a></li>
+                <li><a href="/pages/get-help.html">Get Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Partnership Inquiry Section -->
+    <section class="partnership-inquiry">
+        <h2>Partner with Us</h2>
+        <p>Join us in making a difference. Let's work together to support disaster-affected communities.</p>
+        <form id="partnershipForm">
+            <div class="form-group">
+                <label for="organization">Organization Name</label>
+                <input type="text" id="organization" name="organization" required>
+            </div>
+            <div class="form-group">
+                <label for="contactName">Contact Name</label>
+                <input type="text" id="contactName" name="contactName" required>
+            </div>
+            <div class="form-group">
+                <label for="contactEmail">Contact Email</label>
+                <input type="email" id="contactEmail" name="contactEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="contactPhone">Contact Phone</label>
+                <input type="tel" id="contactPhone" name="contactPhone" required>
+            </div>
+            <div class="form-group">
+                <label for="partnershipType">Type of Partnership</label>
+                <select id="partnershipType" name="partnershipType" required>
+                    <option value="">Select Partnership Type</option>
+                    <option value="corporate">Corporate Sponsorship</option>
+                    <option value="ngo">NGO Collaboration</option>
+                    <option value="community">Community Partnership</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Tell us more about your organization and how you'd like to partner with us."></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Inquiry</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="/pages/about.html">About Us</a>
+            <a href="/pages/contact.html">Contact</a>
+            <a href="/pages/privacy.html">Privacy Policy</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 Disaster Relief Coordination. All rights reserved.</p>
+    </footer>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget">
+        <button onclick="openChat()">Chat with Us</button>
+    </div>
+
+    <!-- Link JavaScript -->
+    <script src="/src/assets/js/script.js"></script>
+</body>
+</html>

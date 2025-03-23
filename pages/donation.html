@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReliefAid | Make a Donation</title>
+    <link rel="stylesheet" href="/src/assets/css/donation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">ReliefAid</div>
+        <nav>
+            <ul>
+                <li><a href="/pages/index.html">Home</a></li>
+                <li><a href="/pages/interactive map.html">Interactive Map</a></li>
+                <li><a href="/pages/inventory.html">Inventory</a></li>
+                <li><a href="/pages/donation.html" class="active">Make a Donation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Donation Form Section -->
+    <section class="donation-container">
+        <h2>Make a Donation</h2>
+        <form class="donation-form">
+            <!-- Full Name -->
+            <fieldset>
+                <legend>Full Name</legend>
+                <input type="text" id="first-name" placeholder="First name" required>
+                <input type="text" id="last-name" placeholder="Last name" required>
+                <input type="text" id="other-names" placeholder="Other name(s)">
+            </fieldset>
+
+            <!-- Email Address -->
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required>
+
+            <!-- Phone Number -->
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+
+            <!-- Type of Donation -->
+            <fieldset>
+                <legend>Type of Donation</legend>
+                <div class="donation-type">
+                    <input type="radio" name="donationType" id="cash" value="cash" aria-label="Cash Donation">
+                    <label for="cash">Cash</label>
+                    <input type="radio" name="donationType" id="kind" value="kind" aria-label="Kind Donation">
+                    <label for="kind">Kind</label>
+                </div>
+            </fieldset>
+
+            <!-- Payment Section (Hidden by Default) -->
+            <div id="payment-section" class="payment-section" style="display: none;">
+                <h3>Payment Details</h3>
+                <fieldset>
+                    <legend>Card Details</legend>
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+
+                    <label for="expiry-date">Expiry Date</label>
+                    <input type="text" id="expiry-date" placeholder="MM/YY" required>
+
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" placeholder="123" required>
+
+                    <label for="cardholder-name">Cardholder Name</label>
+                    <input type="text" id="cardholder-name" placeholder="John Doe" required>
+                </fieldset>
+            </div>
+
+            <!-- Category of Items -->
+            <fieldset>
+                <legend>Category of Item(s)</legend>
+                <div class="category-items">
+                    <label><input type="checkbox" name="category" value="food"> Food (Non-perishable)</label>
+                    <label><input type="checkbox" name="category" value="clothing"> Clothing</label>
+                    <label><input type="checkbox" name="category" value="medical"> Medical Supplies</label>
+                    <label><input type="checkbox" name="category" value="hygiene"> Hygiene Kits</label>
+                    <label><input type="checkbox" name="category" value="bedding"> Blankets/Bedding</label>
+                    <label><input type="checkbox" name="category" value="other"> Other:</label>
+                    <input type="text" placeholder="Specify item">
+                </div>
+            </fieldset>
+
+            <!-- Description of Items -->
+            <label for="description">Description of Items</label>
+            <input type="text" id="description" required>
+
+            <!-- Condition -->
+            <fieldset>
+                <legend>Condition</legend>
+                <div class="condition">
+                    <label><input type="radio" name="condition" id="new"> New</label>
+                    <label><input type="radio" name="condition" id="used"> Gently Used</label>
+                </div>
+            </fieldset>
+
+            <!-- Pick up or Drop off -->
+            <fieldset>
+                <legend>Pick up or Drop off</legend>
+                <div class="pickup-dropoff">
+                    <label><input type="radio" name="pickup_dropoff" id="pickup"> Pick up</label>
+                    <label><input type="radio" name="pickup_dropoff" id="dropoff"> Drop off</label>
+                </div>
+            </fieldset>
+
+            <!-- Preferred Date and Time -->
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" required>
+
+            <label for="time">Preferred Time</label>
+            <input type="time" id="time" required>
+
+            <!-- Consent & Communication Preferences -->
+            <fieldset>
+                <legend>Consent & Communication Preferences</legend>
+                <div class="consent">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="terms">
+                        <span class="checkmark"></span>
+                        I agree to the terms and conditions
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="updates">
+                        <span class="checkmark"></span>
+                        Receive updates on donation usage
+                    </label>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="newsletter">
+                        <span class="checkmark"></span>
+                        Subscribe to newsletter
+                    </label>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="/pages/about.html">About Us</a>
+            <a href="/pages/contact.html">Contact</a>
+            <a href="/pages/privacy.html">Privacy Policy</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 Disaster Relief Coordination. All rights reserved.</p>
+    </footer>
+    <script src="/src/assets/js/script.js"></script>
+</body>
+</html>

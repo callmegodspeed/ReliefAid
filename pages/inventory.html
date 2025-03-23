@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReliefAid | Inventory System</title>
+    <link rel="stylesheet" href="/src/assets/css/inventory.css">
+    <!-- Add a modern font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Add FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">ReliefAid</div>
+        <nav>
+            <ul>
+                <li><a href="/pages/index.html">Home</a></li>
+                <li><a href="/pages/interactive map.html">Interactive Map</a></li>
+                <li><a href="/pages/inventory.html" class="active">Inventory</a></li>
+                <li><a href="/pages/donation.html">Make a Donation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Inventory Section -->
+    <section class="inventory-container">
+        <div class="inventory-tabs">
+            <button class="active" onclick="scrollToSection('all')">All</button>
+            <button onclick="scrollToSection('food-banks')">Food Banks</button>
+            <button onclick="scrollToSection('medical-facilities')">Medical Facilities</button>
+            <button onclick="scrollToSection('shelter-housing')">Shelter & Housing</button>
+            <button onclick="scrollToSection('fuel-electricity')">Fuel & Electricity</button>
+            <button onclick="scrollToSection('emotional-support')">Emotional Support</button>
+            <input type="text" placeholder="Search" class="search-box" id="searchBox">
+        </div>
+
+    <!-- All Sections (Optional) -->
+    <div id="all">
+        <!-- Content for "All" can go here if needed -->
+    </div>
+
+    <!-- Food Banks Section -->
+    <h2 id="food-banks"><i class="fas fa-utensils"></i> Food Banks</h2>
+    <div class="inventory-section">
+        <div class="inventory-item">
+            <img src="/public/images/food-bank1.jpg" alt="Food Bank">
+            <h3>Food for All Africa</h3>
+            <span>Spintex Road, Accra</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/food-bank3.jpg" alt="Food Bank">
+            <h3>The Lord's Prayer Ministry Food Bank</h3>
+            <span>Teshie</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/food-bank2.jpg" alt="Food Bank">
+            <h3>Blessed Life Foundation Food Bank</h3>
+            <span>Dansoman</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/food-bank4.jpg" alt="Food Bank">
+            <h3>Ghana Food Movement</h3>
+            <span>Osu</span>
+            <button class="btn">Learn More</button>
+        </div>
+    </div>
+
+    <!-- Medical Facilities Section -->
+    <h2 id="medical-facilities"><i class="fas fa-hospital"></i> Medical Facilities</h2>
+    <div class="inventory-section">
+        <div class="inventory-item">
+            <img src="/public/images/hospital1.jpg" alt="Hospital">
+            <h3>Korle-Bu Teaching Hospital</h3>
+            <span>Korle Bu</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/hospital2.jpg" alt="Hospital">
+            <h3>Greater Accra Regional Hospital</h3>
+            <span>Ridge</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/hospital3.jpg" alt="Hospital">
+            <h3>Tema General Hospital</h3>
+            <span>Tema Community 9</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/hospital4.jpg" alt="Hospital">
+            <h3>Ga East Municipal Hospital</h3>
+            <span>Kwabenya</span>
+            <button class="btn">Learn More</button>
+        </div>
+    </div>
+
+    <!-- Shelter & Housing Section -->
+    <h2 id="shelter-housing"><i class="fas fa-home"></i> Shelter & Housing</h2>
+    <div class="inventory-section">
+        <div class="inventory-item">
+            <img src="/public/images/housing1.jpg" alt="Shelter">
+            <h3>Safe Haven Shelter</h3>
+            <span>Accra Central</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/housing2.jpg" alt="Shelter">
+            <h3>Hope Housing Project</h3>
+            <span>East Legon</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/housing3.jpg" alt="Shelter">
+            <h3>Community Refuge Center</h3>
+            <span>Madina</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/housing4.jpg" alt="Shelter">
+            <h3>Temporary Housing Solutions</h3>
+            <span>Ashaiman</span>
+            <button class="btn">Learn More</button>
+        </div>
+    </div>
+
+    <!-- Fuel & Electricity Section -->
+    <h2 id="fuel-electricity"><i class="fas fa-bolt"></i> Fuel & Electricity</h2>
+    <div class="inventory-section">
+        <div class="inventory-item">
+            <img src="/public/images/fuel1.jpg" alt="Fuel">
+            <h3>National Fuel Assistance Program</h3>
+            <span>Accra</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/fuel2.jpg" alt="Fuel">
+            <h3>Emergency Power Solutions</h3>
+            <span>Tema</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/fuel3.jpg" alt="Fuel">
+            <h3>Solar Energy for All</h3>
+            <span>Kumasi</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/fuel4.jpg" alt="Fuel">
+            <h3>Fuel Distribution Centers</h3>
+            <span>Tamale</span>
+            <button class="btn">Learn More</button>
+        </div>
+    </div>
+
+    <!-- Emotional Support Section -->
+    <h2 id="emotional-support"><i class="fas fa-heart"></i> Emotional Support</h2>
+    <div class="inventory-section">
+        <div class="inventory-item">
+            <img src="/public/images/support1.jpg" alt="Support">
+            <h3>Mental Health First Aid</h3>
+            <span>Accra</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/support2.jpg" alt="Support">
+            <h3>Crisis Counseling Services</h3>
+            <span>Kumasi</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/support3.jpg" alt="Support">
+            <h3>Community Support Groups</h3>
+            <span>Cape Coast</span>
+            <button class="btn">Learn More</button>
+        </div>
+        <div class="inventory-item">
+            <img src="/public/images/support4.jpg" alt="Support">
+            <h3>Trauma Recovery Center</h3>
+            <span>Takoradi</span>
+            <button class="btn">Learn More</button>
+        </div>
+    </div>
+</section>
+
+   <!-- Back to Top Button -->
+   <button id="backToTop" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+   <!-- Footer -->
+   <footer>
+    <div class="footer-links">
+        <a href="/pages/about.html">About Us</a>
+        <a href="/pages/contact.html">Contact</a>
+        <a href="/pages/privacy.html">Privacy Policy</a>
+    </div>
+    <div class="social-media">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2025 Disaster Relief Coordination. All rights reserved.</p>
+   </footer>
+
+   <!-- Link JavaScript -->
+   <script src="/src/assets/js/script.js"></script>
+    <!-- Modal Structure -->
+    <div id="learn-more-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Content will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+</body> 
+   
+</html>

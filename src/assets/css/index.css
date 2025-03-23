@@ -1,0 +1,822 @@
+/* General Styles */
+:root {
+    --primary-color: #e73c7e;
+    --secondary-color: #23a6d5;
+    --background-gradient: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    --spacing: 20px;
+    --max-width: 1200px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-gradient);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #333;
+    line-height: 1.6;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: var(--spacing);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--spacing);
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px var(--spacing);
+    margin: var(--spacing) auto;
+    max-width: var(--max-width);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-image: url('images/hero-image.jpg'); /* Add your hero image */
+    background-size: cover; /* Ensure the image covers the entire section */
+    background-position: center; /* Center the image */
+    color: white; /* Change text color to contrast with the background */
+    position: relative; /* For overlay */
+    overflow: hidden;
+}
+
+.hero-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-image.active {
+    opacity: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: var(--spacing);
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* Overlay to improve text readability */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.hero h1,
+.hero p,
+.hero-buttons {
+    position: relative; /* Ensure text is above the overlay */
+    z-index: 2;
+}
+
+/* Testimonials Section */
+.testimonials {
+    text-align: center;
+    padding: var(--spacing);
+    max-width: var(--max-width);
+    margin: var(--spacing) auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing);
+}
+
+.testimonial-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.testimonial-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial {
+    flex: 0 0 100%;
+    padding: var(--spacing);
+    box-sizing: border-box;
+}
+
+.testimonial p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.testimonial span {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Slider Dots */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing);
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--primary-color);
+}
+
+/* Map Preview Section */
+.map-preview {
+    text-align: center;
+    padding: var(--spacing);
+    max-width: var(--max-width);
+    margin: var(--spacing) auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.map-feature {
+    text-align: center;
+}
+
+.map-feature img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+/* Map Content Container */
+.map-content {
+    display: flex;
+    align-items: center; /* Vertically center align items */
+    gap: var(--spacing); /* Add spacing between columns */
+}
+
+/* Left Side: Map Features */
+.map-features {
+    flex: 1; /* Take up 50% of the width */
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    gap: var(--spacing); /* Add spacing between icons */
+}
+
+/* Right Side: Mini Map */
+#mini-map {
+    flex: 1; /* Take up 50% of the width */
+    height: 300px; /* Set a fixed height for the map */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Button Container */
+.button-container {
+    text-align: center;
+    margin-top: var(--spacing);
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: #d42a6a;
+}
+
+.btn.donate {
+    background: var(--secondary-color);
+}
+
+.btn.donate:hover {
+    background: #1e88e5;
+}
+
+/* Features Section */
+.features {
+    text-align: center;
+    padding: var(--spacing);
+    max-width: var(--max-width);
+    margin: var(--spacing) auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing);
+}
+
+.feature-cards-container {
+    display: flex;
+    overflow-x: auto;
+    gap: var(--spacing);
+    padding-bottom: 10px; /* Add space for scrollbar */
+}
+
+/* Disaster Card */
+.disaster-card {
+    flex: 0 0 auto;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: var(--spacing);
+    border-top: 5px solid; /* Add a colored border to indicate disaster type */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.disaster-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.disaster-card.flood {
+    border-top-color: #3498db; /* Blue for floods */
+}
+
+.disaster-card.fire {
+    border-top-color: #e74c3c; /* Red for bushfires */
+}
+
+.disaster-card.earthquake {
+    border-top-color: #f1c40f; /* Yellow for earthquakes */
+}
+
+.disaster-card.food {
+    border-top-color: #2ecc71; /* Green for food banks */
+}
+
+.disaster-card.medical {
+    border-top-color: #9b59b6; /* Purple for medical facilities */
+}
+
+.disaster-card.shelter {
+    border-top-color: #e67e22; /* Orange for shelter & housing */
+}
+
+.disaster-card.fuel {
+    border-top-color: #34495e; /* Dark blue for fuel & electricity */
+}
+
+.disaster-card.support {
+    border-top-color: #e74c3c; /* Red for emotional support */
+}
+
+.disaster-header {
+    margin-bottom: var(--spacing);
+}
+
+.disaster-header h3 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.update-time {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.disaster-content {
+    margin-bottom: var(--spacing);
+}
+
+.disaster-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.disaster-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.disaster-content li {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.disaster-content li strong {
+    color: #333;
+}
+
+.disaster-footer {
+    text-align: center;
+}
+
+.disaster-footer .btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.disaster-footer .btn:hover {
+    background: #d42a6a;
+}
+
+/* Hide scrollbar for a cleaner look */
+.feature-cards-container::-webkit-scrollbar {
+    display: none;
+}
+
+.feature-cards-container {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* Testimonials Section */
+.testimonials {
+    text-align: center;
+    padding: var(--spacing);
+    max-width: var(--max-width);
+    margin: var(--spacing) auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing);
+}
+
+.testimonial {
+    margin-bottom: var(--spacing);
+}
+
+.testimonial p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.testimonial span {
+    font-size: 1rem;
+    color: #666;
+}
+
+.map-preview h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing);
+}
+
+/* News Section */
+.news {
+    text-align: center;
+    padding: var(--spacing);
+    max-width: var(--max-width);
+    margin: var(--spacing) auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.news h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing);
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing);
+    margin-bottom: var(--spacing);
+    text-align: left;
+}
+
+.news-item img {
+    width: 150px; /* Adjust image width */
+    height: 100px; /* Adjust image height */
+    border-radius: 10px;
+    object-fit: cover; /* Ensure images maintain aspect ratio */
+}
+
+.news-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.news-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.news-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-item a:hover {
+    color: #d42a6a;
+}
+
+.news-content {
+    flex: 1;
+}
+
+.news-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.news-content p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.news-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-content a:hover {
+    color: #d42a6a;
+}
+/* Volunteer/Partner Section */
+.cta {
+    text-align: center;
+    padding: var(--spacing);
+    max-width: var(--max-width);
+    margin: var(--spacing) auto;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing);
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: var(--spacing);
+    background: rgba(255, 255, 255, 0.9);
+    margin-top: var(--spacing);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-links {
+    margin-bottom: var(--spacing);
+}
+
+.footer-links a {
+    margin: 0 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Social Media Icons */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: var(--spacing);
+}
+
+.social-media a {
+    color: #333;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--primary-color);
+}
+
+/* Optional: Brand Colors on Hover */
+.social-media .fa-facebook:hover {
+    color: #1877f2; /* Facebook blue */
+}
+
+.social-media .fa-twitter:hover {
+    color: #1da1f2; /* Twitter blue */
+}
+
+.social-media .fa-instagram:hover {
+    color: #e4405f; /* Instagram pink */
+}
+
+/* Chat Widget */
+.chat-widget {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+.chat-widget button {
+    padding: 10px 20px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.chat-widget button:hover {
+    background: #d42a6a;
+}
+
+/* Chat Box */
+.chat-box {
+    display: none; /* Hidden by default */
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+.chat-box.active {
+    display: block; /* Show when active */
+}
+
+/* Chat Header */
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: var(--primary-color);
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.chat-header .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Chat Body */
+.chat-body {
+    padding: 10px;
+}
+
+/* Chat Messages */
+.chat-messages {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+}
+
+/* Chat Input */
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.chat-input button {
+    padding: 10px 15px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.chat-input button:hover {
+    background: #d42a6a;
+}
+
+/* Chat Messages */
+.message {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.message .profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ccc;
+    margin-right: 10px;
+}
+
+.message.user .profile-icon {
+    background: var(--primary-color);
+}
+
+.message.bot .profile-icon {
+    background: #666;
+}
+
+.message .message-text {
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.message.user .message-text {
+    background: var(--primary-color);
+    color: white;
+    margin-left: auto;
+}
+
+.message.bot .message-text {
+    background: #666;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .feature {
+        margin-bottom: var(--spacing);
+    }
+    .map-content {
+        flex-direction: column;
+    }
+
+    #mini-map {
+        width: 100%;
+    }
+    .news-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .news-item img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Ensure it's on top of other elements */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto; /* Adjust this value to move the modal up or down */
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh; /* Limit the height to 80% of the viewport height */
+    overflow-y: auto; /* Add a scrollbar if content overflows */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: var(--primary-color); /* Change color on hover */
+}
