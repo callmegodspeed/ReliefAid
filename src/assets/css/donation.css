@@ -7,6 +7,24 @@
     --max-width: 800px; /* Adjusted for a narrower form */
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-left: 10px;
+    display: inline-block;
+}
+
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
